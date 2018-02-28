@@ -21,8 +21,6 @@ const buttonSytle = {
     transition: '.25s all',
 };
 
-const buttonHoverSytle = Object.assign({}, buttonSytle, zDepth[3]);
-
 class StretchableButton extends Component {
     constructor(props) {
         super(props);
