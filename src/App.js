@@ -4,6 +4,9 @@ import './App.css';
 import './StretchableButton'
 import StretchableButton from "./StretchableButton";
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import {faSpinner} from '@fortawesome/fontawesome-free-solid'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -21,13 +24,13 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <StretchableButton
-          style={{ position: 'absolute', right: 0, bottom: 0, margin: 20}}
-          buttonStyle={{
-            backgroundColor: 'rgb(0,0,255)',
-          }}
+          style={{ position: 'absolute', right: 0, bottom: 0, margin: 20 }}
           alignRight
-          componentDisplayed={<span>A</span>}
-          componentToDisplay={<span>BBB</span>} />
+          componentDisplayed={<FontAwesomeIcon icon={faSpinner} />}
+          componentToDisplay={<span>BBB</span>}
+          onClick={() => {
+            console.log('click');
+          }} />
       </div>
     );
   }

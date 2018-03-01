@@ -1,21 +1,32 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+let toEmerge;
+let unHovered;
 
 class StretchableButton extends Component {
   constructor(props) {
     super(props);
-    this.state = { hovered: false };
+    this.state = { hovered: false, emerging: false };
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
+
   handleMouseEnter(e) {
+    clearTimeout(unHovered);
     this.setState({ hovered: true });
+    toEmerge = setTimeout(() => {
+      this.setState({ emerging: true });
+    }, this.props.emergeDelay);
   }
 
   handleMouseLeave(e) {
-    this.setState({ hovered: false });
+    clearTimeout(toEmerge);
+    this.setState({ emerging: false });
+    unHovered = setTimeout(() => {
+      this.setState({ hovered: false });
+    }, this.props.emergeDelay);
   }
 
   render() {
@@ -61,13 +72,13 @@ class StretchableButton extends Component {
       opacity: 0,
       position: 'absolute',
       top: 0,
-    }
+    };
 
     const emergeStyle = {
       position: 'absolute',
       top: 0,
       height,
-      opacity: this.state.hovered ? 1 : 0,
+      opacity: this.state.emerging ? 1 : 0,
       transition: '.25s all',
       /*
         transitionDelay: '.25s'
@@ -83,6 +94,7 @@ class StretchableButton extends Component {
       verticalAlign: 'middle',
       textAlign: 'center',
     };
+
     return (
       <div style={style}>
         <div
@@ -141,11 +153,12 @@ StretchableButton.propTypes = {
   alignRight: PropTypes.bool,
   stretchPadding: PropTypes.number,
   zDepth: PropTypes.number,
+  emergeDelay: PropTypes.number,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
-  componentDisplayed: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  componentToDisplay: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-}
+  componentDisplayed: PropTypes.node,
+  componentToDisplay: PropTypes.node,
+};
 
 StretchableButton.defaultProps = {
   height: 50,
@@ -154,7 +167,8 @@ StretchableButton.defaultProps = {
   alignRight: false,
   stretchPadding: 25,
   zDepth: 2,
-}
+  emergeDelay: 100,
+};
 
 
 export default StretchableButton;
