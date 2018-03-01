@@ -21,22 +21,11 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <StretchableButton
-          height={50}
-          width={[50, 100]}
-          stretchPadding={25}
-          circle
-          align="right"
-          style={{
-            width: 100,
+          style={{ position: 'absolute', right: 0, bottom: 0, margin: 20}}
+          buttonStyle={{
             backgroundColor: 'rgb(0,0,255)',
           }}
-          zDepth={this.state.stretchableButtonZDepth}
-          onMouseEnter={() => {
-            this.setState({ stretchableButtonZDepth: 3 });
-          }}
-          onMouseLeave={() => {
-            this.setState({ stretchableButtonZDepth: 2 });
-          }}
+          alignRight
           componentDisplayed={<span>A</span>}
           componentToDisplay={<span>BBB</span>} />
       </div>
