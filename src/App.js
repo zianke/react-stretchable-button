@@ -5,7 +5,7 @@ import './StretchableButton'
 import StretchableButton from "./StretchableButton";
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import {faSpinner} from '@fortawesome/fontawesome-free-solid'
+import {faAngleRight} from '@fortawesome/fontawesome-free-solid'
 
 class App extends Component {
   constructor(props) {
@@ -26,8 +26,8 @@ class App extends Component {
         <StretchableButton
           style={{ position: 'absolute', right: 0, bottom: 0, margin: 20 }}
           alignRight
-          componentDisplayed={<FontAwesomeIcon icon={faSpinner} />}
-          componentToDisplay={<span>BBB</span>}
+          componentDisplayed={<FontAwesomeIcon icon={faAngleRight} />}
+          componentToDisplay={<span>Next</span>}
           onClick={() => {
             console.log('click');
           }} />
