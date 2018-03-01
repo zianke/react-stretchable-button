@@ -5,7 +5,7 @@ import StretchableButton from "./StretchableButton";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import {faAngleRight} from '@fortawesome/fontawesome-free-solid'
 
-class App extends Component {
+class Demo extends Component {
   constructor(props) {
     super(props);
     this.state = { stretchableButtonZDepth: 2 };
@@ -27,4 +27,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Demo;
