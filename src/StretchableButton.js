@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-
 
 const zDepth = [{
   boxShadow: '0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0)'
@@ -80,7 +78,7 @@ class StretchableButton extends Component {
             float: this.props.align === 'right' && 'right'
           }, centerParentStyle)}>
             <div style={centerChildStyle}>
-              {this.props.children}
+              {this.props.componentDisplayed}
             </div>
           </div>
         </div>
@@ -91,7 +89,7 @@ class StretchableButton extends Component {
           opacity: this.state.hovered ? 1 : 0
         }, centerParentStyle, emergeStyle, this.props.align === 'right' ? { left: this.props.stretchPadding } : { right: this.props.stretchPadding })}>
           <div style={centerChildStyle}>
-            <span>BBB</span>
+            {this.props.componentToDisplay}
           </div>
         </div>
         <div {...this.props}

@@ -29,13 +29,16 @@ class App extends Component {
           style={{
             width: 100,
             backgroundColor: 'rgb(0,0,255)',
-          }} zDepth={this.state.stretchableButtonZDepth} onMouseEnter={() => {
-          this.setState({ stretchableButtonZDepth: 3 });
-        }} onMouseLeave={() => {
-          this.setState({ stretchableButtonZDepth: 2 });
-        }}>
-          <span>A</span>
-        </StretchableButton>
+          }}
+          zDepth={this.state.stretchableButtonZDepth}
+          onMouseEnter={() => {
+            this.setState({ stretchableButtonZDepth: 3 });
+          }}
+          onMouseLeave={() => {
+            this.setState({ stretchableButtonZDepth: 2 });
+          }}
+          componentDisplayed={<span>A</span>}
+          componentToDisplay={<span>BBB</span>} />
       </div>
     );
   }
