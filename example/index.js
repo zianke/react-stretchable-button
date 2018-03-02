@@ -52,7 +52,7 @@ class App extends Component {
         <ReactStretchableButton style={rootStyleDemo} buttonStyle={{ backgroundColor: 'green' }} />
 
         <h2 style={{
-          position: 'absolute',
+          position: 'fixed',
           top: '50%',
           right: 0,
           transform: 'translate(0, -50%)',
@@ -65,7 +65,7 @@ class App extends Component {
           width={[100, 350]}
           zDepth={0}
           stretchPadding={40}
-          style={{ position: 'absolute', top: '50%', right: 0, transform: 'translate(0, -50%)' }}
+          style={{ position: 'fixed', top: '50%', right: 0, transform: 'translate(0, -50%)' }}
           buttonStyle={{ backgroundColor: '#99c0ff' }}
           componentDisplayed={<FaAngleRight color="white" size={50} />}
           componentToDisplay={<span style={{ whiteSpace: 'nowrap', fontSize: 20, color: 'white' }}>Next Page</span>}
@@ -77,14 +77,14 @@ class App extends Component {
           height={100}
           width={[100, 250]}
           zDepth={0}
-          style={{ position: 'absolute', top: '50%', right: 100, transform: 'translate(0, -50%)' }}
+          style={{ position: 'fixed', top: '50%', right: 100, transform: 'translate(0, -50%)' }}
           buttonStyle={{ backgroundColor: '#99c0ff' }}
           componentDisplayed={<FaAngleLeft color="white" size={50} />}
           componentToDisplay={<span style={{ whiteSpace: 'nowrap', fontSize: 20, color: 'white' }}>Previous Page</span>}
         />
 
         <ReactStretchableButton
-          style={{ position: 'absolute', right: 0, bottom: 0, margin: 20 }}
+          style={{ position: 'fixed', right: 0, bottom: 0, margin: 20 }}
           alignRight
           width={[50, 180]}
           componentDisplayed={<FaStar size={20} />}
