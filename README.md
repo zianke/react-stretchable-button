@@ -1,17 +1,12 @@
-# Product Name
-> Short blurb about what your product does.
+# react-stretchable-button
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+A simple React button component that can be stretched to display something on mouse over.
 
-One to two paragraph statement about your product and what it does.
+## Demo
 
-![](header.png)
+Demo with source code is available [here](https://stackblitz.com/edit/react-ykwfwq)
 
 ## Installation
-
-OS X & Linux:
 
 ```sh
 npm install my-crazy-module --save
