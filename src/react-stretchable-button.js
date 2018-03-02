@@ -1,32 +1,32 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-let toEmerge;
-let unHovered;
 
 class ReactStretchableButton extends Component {
   constructor(props) {
     super(props);
-    this.state = { hovered: false, emerging: false };
+    this.state = { hovered: false, emerging: false, toEmerge: {}, unHovered: {} };
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
 
   handleMouseEnter(e) {
-    clearTimeout(unHovered);
-    this.setState({ hovered: true });
-    toEmerge = setTimeout(() => {
-      this.setState({ emerging: true });
-    }, this.props.emergeDelay);
+    clearTimeout(this.state.unHovered);
+    this.setState({
+      hovered: true, toEmerge: setTimeout(() => {
+        this.setState({ emerging: true });
+      }, this.props.emergeDelay)
+    });
   }
 
   handleMouseLeave(e) {
-    clearTimeout(toEmerge);
-    this.setState({ emerging: false });
-    unHovered = setTimeout(() => {
-      this.setState({ hovered: false });
-    }, this.props.emergeDelay);
+    clearTimeout(this.state.toEmerge);
+    this.setState({
+      emerging: false, unHovered: setTimeout(() => {
+        this.setState({ hovered: false });
+      }, this.props.emergeDelay)
+    });
   }
 
   render() {
@@ -80,9 +80,6 @@ class ReactStretchableButton extends Component {
       height,
       opacity: this.state.emerging ? 1 : 0,
       transition: '.25s all',
-      /*
-        transitionDelay: '.25s'
-      */
     };
 
     const centerParentStyle = {

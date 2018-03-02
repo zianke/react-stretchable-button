@@ -26,9 +26,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var toEmerge = void 0;
-var unHovered = void 0;
-
 var ReactStretchableButton = function (_Component) {
   _inherits(ReactStretchableButton, _Component);
 
@@ -37,7 +34,7 @@ var ReactStretchableButton = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (ReactStretchableButton.__proto__ || Object.getPrototypeOf(ReactStretchableButton)).call(this, props));
 
-    _this.state = { hovered: false, emerging: false };
+    _this.state = { hovered: false, emerging: false, toEmerge: {}, unHovered: {} };
     _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
     _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
     return _this;
@@ -48,22 +45,24 @@ var ReactStretchableButton = function (_Component) {
     value: function handleMouseEnter(e) {
       var _this2 = this;
 
-      clearTimeout(unHovered);
-      this.setState({ hovered: true });
-      toEmerge = setTimeout(function () {
-        _this2.setState({ emerging: true });
-      }, this.props.emergeDelay);
+      clearTimeout(this.state.unHovered);
+      this.setState({
+        hovered: true, toEmerge: setTimeout(function () {
+          _this2.setState({ emerging: true });
+        }, this.props.emergeDelay)
+      });
     }
   }, {
     key: 'handleMouseLeave',
     value: function handleMouseLeave(e) {
       var _this3 = this;
 
-      clearTimeout(toEmerge);
-      this.setState({ emerging: false });
-      unHovered = setTimeout(function () {
-        _this3.setState({ hovered: false });
-      }, this.props.emergeDelay);
+      clearTimeout(this.state.toEmerge);
+      this.setState({
+        emerging: false, unHovered: setTimeout(function () {
+          _this3.setState({ hovered: false });
+        }, this.props.emergeDelay)
+      });
     }
   }, {
     key: 'render',
@@ -118,9 +117,6 @@ var ReactStretchableButton = function (_Component) {
         height: height,
         opacity: this.state.emerging ? 1 : 0,
         transition: '.25s all'
-        /*
-          transitionDelay: '.25s'
-        */
       };
 
       var centerParentStyle = {
