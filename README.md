@@ -6,6 +6,11 @@ A simple React button component that can be stretched to display something on mo
 
 Demo with source code is available [here](https://stackblitz.com/edit/react-ykwfwq)
 
+## Installation
+
+```
+npm install react-stretchable-button --save
+```
 
 ## Development Setup
 
