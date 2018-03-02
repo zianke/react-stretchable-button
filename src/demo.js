@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './StretchableButton'
-import StretchableButton from "./StretchableButton";
+import StretchableButton from "./react-stretchable-button";
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import {faAngleRight} from '@fortawesome/fontawesome-free-solid'
