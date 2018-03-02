@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import StretchableButton from "../src/react-stretchable-button";
+import ReactStretchableButton from "../src/react-stretchable-button";
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import {faAngleRight} from '@fortawesome/fontawesome-free-solid'
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div style={{ fontFamily: 'sans-serif' }}>
-        <StretchableButton
+        <ReactStretchableButton
           style={{ position: 'absolute', right: 0, bottom: 0, margin: 20 }}
           alignRight
           componentDisplayed={<FontAwesomeIcon icon={faAngleRight} />}

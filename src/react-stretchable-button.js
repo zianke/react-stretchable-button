@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 let toEmerge;
 let unHovered;
 
-class StretchableButton extends Component {
+class ReactStretchableButton extends Component {
   constructor(props) {
     super(props);
     this.state = { hovered: false, emerging: false };
@@ -144,7 +144,7 @@ class StretchableButton extends Component {
   }
 }
 
-StretchableButton.propTypes = {
+ReactStretchableButton.propTypes = {
   height: PropTypes.number,
   width: PropTypes.arrayOf(PropTypes.number),
   style: PropTypes.object,
@@ -160,7 +160,7 @@ StretchableButton.propTypes = {
   componentToDisplay: PropTypes.node,
 };
 
-StretchableButton.defaultProps = {
+ReactStretchableButton.defaultProps = {
   height: 50,
   width: [50, 100],
   square: false,
@@ -171,4 +171,4 @@ StretchableButton.defaultProps = {
 };
 
 
-export default StretchableButton;
+export default ReactStretchableButton;
