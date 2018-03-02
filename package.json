@@ -1,6 +1,6 @@
 {
   "name": "react-stretchable-button",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple React button component that can be stretched to display something on mouse over.",
   "main": "dist/react-stretchable-button.js",
   "repository": "https://github.com/zianke/react-stretchable-button.git",
