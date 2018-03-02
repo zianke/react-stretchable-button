@@ -9,9 +9,7 @@ Demo with source code is available [here](https://stackblitz.com/edit/react-ykwf
 
 ## Development Setup
 
-```
-git clone https://github.com/zianke/react-stretchable-button.git
-cd react-stretchable-button
-npm install
-npm start
-```
+  * Clone the repo: `git clone https://github.com/zianke/react-stretchable-button.git`
+  * Install the dependencies: `cd react-stretchable-button && npm install`
+  * Start webpack: `npm start`
+  * Open `example/index.html`
