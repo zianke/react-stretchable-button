@@ -4,7 +4,7 @@ A simple React button component that can be stretched to display something on mo
 
 ## Demo
 
-Demo with source code is available [here](https://stackblitz.com/edit/react-ykwfwq)
+[Demo](https://react-ykwfwq.stackblitz.io) is available with [source code](https://stackblitz.com/edit/react-ykwfwq).
 
 ## Installation
 
