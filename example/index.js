@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import StretchableButton from "./react-stretchable-button";
+import ReactDOM from 'react-dom';
+import StretchableButton from "../src/react-stretchable-button";
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import {faAngleRight} from '@fortawesome/fontawesome-free-solid'
 
-class Demo extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = { stretchableButtonZDepth: 2 };
@@ -26,4 +27,4 @@ class Demo extends Component {
   }
 }
 
-export default Demo;
+ReactDOM.render(<App />, document.getElementById('root'));
