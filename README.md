@@ -8,14 +8,11 @@ Demo with source code is available [here](https://stackblitz.com/edit/react-ykwf
 
 ## Installation
 
-```sh
-npm install my-crazy-module --save
 ```
-
-Windows:
-
-```sh
-edit autoexec.bat
+git clone https://github.com/zianke/react-stretchable-button.git
+cd react-stretchable-button
+npm install
+npm start
 ```
 
 ## Usage example
