@@ -90,15 +90,16 @@ class App extends Component {
                         style={{whiteSpace: 'nowrap', fontSize: 20, color: 'white'}}>Previous Page</span>}
                 />
 
-                <ReactStretchableButton
-                    style={{position: 'fixed', right: 0, bottom: 0, margin: 20}}
-                    alignRight
-                    width={[50, 180]}
-                    componentDisplayed={<FaStar size={20}/>}
-                    componentToDisplay={<span style={{whiteSpace: 'nowrap'}}>Star this repo!</span>}
-                    onClick={() => {
-                        window.location.href = "https://github.com/zianke/react-stretchable-button";
-                    }}/>
+                <div style={{position: 'fixed', right: 0, bottom: 0}}>
+                    {['S', 'T', 'A', 'R', '!'].map((c) => <ReactStretchableButton
+                        style={{margin: 20}}
+                        alignRight
+                        componentDisplayed={<FaStar size={20}/>}
+                        componentToDisplay={<span>{c}</span>}
+                        onClick={() => {
+                            window.location.href = "https://github.com/zianke/react-stretchable-button";
+                        }}/>)}
+                </div>
             </div>
         );
     }
