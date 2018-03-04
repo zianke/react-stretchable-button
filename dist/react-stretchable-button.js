@@ -116,6 +116,7 @@ var ReactStretchableButton = function (_Component) {
                 top: 0,
                 height: height,
                 opacity: this.state.emerging ? 1 : 0,
+                userSelect: this.state.emerging ? 'auto' : 'none',
                 transition: this.props.transitionDuration / 1000 + 's all'
             };
 

@@ -79,6 +79,7 @@ class ReactStretchableButton extends Component {
             top: 0,
             height,
             opacity: this.state.emerging ? 1 : 0,
+            userSelect: this.state.emerging ? 'auto' : 'none',
             transition: `${this.props.transitionDuration / 1000}s all`,
         };
 
