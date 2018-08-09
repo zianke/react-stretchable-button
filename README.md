@@ -1,5 +1,6 @@
 # react-stretchable-button
 [![npm version](https://badge.fury.io/js/react-stretchable-button.svg)](https://badge.fury.io/js/react-stretchable-button)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 A simple React button component that can be stretched to display something on mouse over.
 
