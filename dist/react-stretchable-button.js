@@ -78,11 +78,13 @@ var ReactStretchableButton = function (_Component) {
                 alignRight = _props.alignRight,
                 stretchPadding = _props.stretchPadding,
                 zDepth = _props.zDepth,
+                transitionDuration = _props.transitionDuration,
+                emergeDelay = _props.emergeDelay,
                 _onMouseEnter = _props.onMouseEnter,
                 _onMouseLeave = _props.onMouseLeave,
                 componentDisplayed = _props.componentDisplayed,
                 componentToDisplay = _props.componentToDisplay,
-                other = _objectWithoutProperties(_props, ['height', 'width', 'style', 'buttonStyle', 'square', 'alignRight', 'stretchPadding', 'zDepth', 'onMouseEnter', 'onMouseLeave', 'componentDisplayed', 'componentToDisplay']);
+                other = _objectWithoutProperties(_props, ['height', 'width', 'style', 'buttonStyle', 'square', 'alignRight', 'stretchPadding', 'zDepth', 'transitionDuration', 'emergeDelay', 'onMouseEnter', 'onMouseLeave', 'componentDisplayed', 'componentToDisplay']);
 
             var zDepthValues = [{
                 boxShadow: '0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0)'
@@ -102,7 +104,7 @@ var ReactStretchableButton = function (_Component) {
                 height: height,
                 borderRadius: !square && height && height / 2,
                 cursor: 'pointer',
-                transition: this.props.transitionDuration / 1000 + 's all'
+                transition: transitionDuration / 1000 + 's all'
             };
 
             var buttonLayerStyle = _extends({}, buttonBasicSytle, {
@@ -117,7 +119,7 @@ var ReactStretchableButton = function (_Component) {
                 height: height,
                 opacity: this.state.emerging ? 1 : 0,
                 userSelect: this.state.emerging ? 'auto' : 'none',
-                transition: this.props.transitionDuration / 1000 + 's all'
+                transition: transitionDuration / 1000 + 's all'
             };
 
             var centerParentStyle = {

@@ -39,6 +39,8 @@ class ReactStretchableButton extends Component {
             alignRight,
             stretchPadding,
             zDepth,
+            transitionDuration,
+            emergeDelay,
             onMouseEnter,
             onMouseLeave,
             componentDisplayed,
@@ -64,7 +66,7 @@ class ReactStretchableButton extends Component {
             height,
             borderRadius: !square && height && height / 2,
             cursor: 'pointer',
-            transition: `${this.props.transitionDuration / 1000}s all`,
+            transition: `${transitionDuration / 1000}s all`,
         };
 
         const buttonLayerStyle = {
@@ -80,7 +82,7 @@ class ReactStretchableButton extends Component {
             height,
             opacity: this.state.emerging ? 1 : 0,
             userSelect: this.state.emerging ? 'auto' : 'none',
-            transition: `${this.props.transitionDuration / 1000}s all`,
+            transition: `${transitionDuration / 1000}s all`,
         };
 
         const centerParentStyle = {
