@@ -1,4 +1,5 @@
 # react-stretchable-button
+[![Build Status](https://travis-ci.com/zianke/react-stretchable-button.svg?branch=master)](https://travis-ci.com/zianke/react-stretchable-button)
 [![NpmVersion](https://img.shields.io/npm/v/react-stretchable-button.svg)](https://www.npmjs.com/package/react-stretchable-button)
 [![npm](https://img.shields.io/npm/dt/react-stretchable-button.svg)](https://www.npmjs.com/package/react-stretchable-button)
 [![GitHub](https://img.shields.io/github/license/zianke/react-stretchable-button.svg)](https://github.com/zianke/react-stretchable-button)
