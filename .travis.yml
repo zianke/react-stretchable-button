@@ -10,5 +10,8 @@ cache:
 install:
   - npm install
 
+before_script:
+  - npm run pretest
+
 script:
   - npm run build
