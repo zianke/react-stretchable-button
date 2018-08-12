@@ -11,7 +11,7 @@ class ReactStretchableButton extends Component {
     }
 
 
-    handleMouseEnter(e) {
+    handleMouseEnter() {
         clearTimeout(this.state.unHovered);
         this.setState({
             hovered: true, toEmerge: setTimeout(() => {
@@ -20,7 +20,7 @@ class ReactStretchableButton extends Component {
         });
     }
 
-    handleMouseLeave(e) {
+    handleMouseLeave() {
         clearTimeout(this.state.toEmerge);
         this.setState({
             emerging: false, unHovered: setTimeout(() => {
@@ -40,7 +40,7 @@ class ReactStretchableButton extends Component {
             stretchPadding,
             zDepth,
             transitionDuration,
-            emergeDelay,
+            emergeDelay, // eslint-disable-line no-unused-vars
             onMouseEnter,
             onMouseLeave,
             componentDisplayed,
@@ -126,17 +126,17 @@ class ReactStretchableButton extends Component {
                         </div>
                     </div>
                     <div {...other}
-                         style={Object.assign({}, buttonLayerStyle, {
-                             width: this.state.hovered ? width[1] : width[0],
-                         }, alignRight ? {right: 0} : {left: 0})}
-                         onMouseEnter={(e) => {
-                             onMouseEnter && onMouseEnter(e);
-                             this.handleMouseEnter(e);
-                         }}
-                         onMouseLeave={(e) => {
-                             onMouseLeave && onMouseLeave(e);
-                             this.handleMouseLeave(e);
-                         }}>
+                        style={Object.assign({}, buttonLayerStyle, {
+                            width: this.state.hovered ? width[1] : width[0],
+                        }, alignRight ? {right: 0} : {left: 0})}
+                        onMouseEnter={(e) => {
+                            onMouseEnter && onMouseEnter(e);
+                            this.handleMouseEnter(e);
+                        }}
+                        onMouseLeave={(e) => {
+                            onMouseLeave && onMouseLeave(e);
+                            this.handleMouseLeave(e);
+                        }}>
                     </div>
                 </div>
             </div>

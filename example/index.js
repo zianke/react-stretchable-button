@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import ReactStretchableButton from "../src/react-stretchable-button";
+import ReactStretchableButton from '../src/react-stretchable-button';
 
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
@@ -28,8 +28,8 @@ class App extends Component {
                 <ReactStretchableButton height={40} width={[60, 210]}/>
                 <h2>Usage #3: Set components displayed and to display</h2>
                 <ReactStretchableButton height={40} width={[60, 210]}
-                                        componentDisplayed={<FaGithub size={20}/>}
-                                        componentToDisplay={<span>github.com/zianke</span>}/>
+                    componentDisplayed={<FaGithub size={20}/>}
+                    componentToDisplay={<span>github.com/zianke</span>}/>
                 <h2>Usage #4: Set square, alignRight, stretchPadding, zDepth, transitionDuration, emergeDelay, event
                     handlers</h2>
                 <ReactStretchableButton
@@ -92,12 +92,13 @@ class App extends Component {
 
                 <div style={{position: 'fixed', right: 0, bottom: 0}}>
                     {['S', 'T', 'A', 'R', '!'].map((c) => <ReactStretchableButton
+                        key={c}
                         style={{margin: 20}}
                         alignRight
                         componentDisplayed={<FaStar size={20}/>}
                         componentToDisplay={<span>{c}</span>}
                         onClick={() => {
-                            window.location.href = "https://github.com/zianke/react-stretchable-button";
+                            window.location.href = 'https://github.com/zianke/react-stretchable-button';
                         }}/>)}
                 </div>
             </div>

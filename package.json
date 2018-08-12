@@ -6,6 +6,7 @@
   "repository": "https://github.com/zianke/react-stretchable-button.git",
   "scripts": {
     "start": "webpack --progress --colors --watch",
+    "pretest": "eslint src/react-stretchable-button.js example/index.js",
     "build": "babel src --out-dir dist"
   },
   "author": "Zian Ke",
@@ -25,6 +26,8 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^5.3.0",
+    "eslint-plugin-react": "^7.10.0",
     "webpack": "^1.12.9"
   }
 }

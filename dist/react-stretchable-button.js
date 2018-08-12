@@ -24,7 +24,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // eslint-disable-line no-unused-vars
+
 
 var ReactStretchableButton = function (_Component) {
     _inherits(ReactStretchableButton, _Component);
@@ -42,7 +43,7 @@ var ReactStretchableButton = function (_Component) {
 
     _createClass(ReactStretchableButton, [{
         key: 'handleMouseEnter',
-        value: function handleMouseEnter(e) {
+        value: function handleMouseEnter() {
             var _this2 = this;
 
             clearTimeout(this.state.unHovered);
@@ -54,7 +55,7 @@ var ReactStretchableButton = function (_Component) {
         }
     }, {
         key: 'handleMouseLeave',
-        value: function handleMouseLeave(e) {
+        value: function handleMouseLeave() {
             var _this3 = this;
 
             clearTimeout(this.state.toEmerge);
@@ -138,7 +139,7 @@ var ReactStretchableButton = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     {
-                        style: _extends({}, {
+                        style: Object.assign({}, {
                             width: width[1],
                             height: height,
                             position: 'relative'
@@ -146,14 +147,14 @@ var ReactStretchableButton = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         {
-                            style: _extends({}, buttonBasicSytle, buttonStyle, {
+                            style: Object.assign({}, buttonBasicSytle, buttonStyle, {
                                 width: this.state.hovered ? width[1] : width[0],
                                 float: alignRight && 'right'
                             }, zDepthValues[zDepth])
                         },
                         _react2.default.createElement(
                             'div',
-                            { style: _extends({
+                            { style: Object.assign({
                                     height: height,
                                     width: width[0],
                                     float: alignRight && 'right'
@@ -168,7 +169,7 @@ var ReactStretchableButton = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         {
-                            style: _extends({}, centerParentStyle, emergeStyle, alignRight ? { left: stretchPadding } : { right: stretchPadding }) },
+                            style: Object.assign({}, centerParentStyle, emergeStyle, alignRight ? { left: stretchPadding } : { right: stretchPadding }) },
                         _react2.default.createElement(
                             'div',
                             { style: centerChildStyle },
@@ -176,7 +177,7 @@ var ReactStretchableButton = function (_Component) {
                         )
                     ),
                     _react2.default.createElement('div', _extends({}, other, {
-                        style: _extends({}, buttonLayerStyle, {
+                        style: Object.assign({}, buttonLayerStyle, {
                             width: this.state.hovered ? width[1] : width[0]
                         }, alignRight ? { right: 0 } : { left: 0 }),
                         onMouseEnter: function onMouseEnter(e) {
